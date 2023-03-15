@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Partida {
 
@@ -22,13 +23,14 @@ public class Partida {
     private Integer id;
     private String identifier;
     private LocalDateTime data;
-    private Integer gols_casa;
+    private Integer gols_mandante;
     private Integer gols_visitante;
     private Integer publico;
+    private String estadio;
 
     @ManyToOne
-    @JoinColumn(name = "time_casa_id")
-    private Time casa;
+    @JoinColumn(name = "time_mandante_id")
+    private Time mandante;
 
     @ManyToOne
     @JoinColumn(name = "time_visitante_id")

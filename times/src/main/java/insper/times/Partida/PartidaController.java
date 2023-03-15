@@ -17,14 +17,14 @@ public class PartidaController {
         return partidaService.getAllPartidas();
     }
 
-    @GetMapping("/{identifier}")
-    public Partida getPartidaByIdentifier(String identifier) {
-        return partidaService.getPartidaByIdentifier(identifier);
-    }
-
     @PostMapping
     public Partida postPartida(@RequestBody Partida partida) {
         return partidaService.postPartida(partida);
+    }
+
+    @PostMapping("/{identifier}")
+    public Partida atualizaPartida(@PathVariable String identifier, @RequestBody Partida partida) {
+        return partidaService.atualizaPartida(partida);
     }
     
 }

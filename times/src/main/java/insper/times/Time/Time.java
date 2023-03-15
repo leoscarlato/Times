@@ -28,11 +28,17 @@ public class Time {
     private String estadio;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "casa")
-    private List<Partida> partidas_casa;
+    @OneToMany(mappedBy = "mandante")
+    private List<Partida> partidas_mandante;
 
     @JsonIgnore
     @OneToMany(mappedBy = "visitante")
     private List<Partida> partidas_visitante;
+
+    public Time(String nome, String identifier, String estadio) {
+        this.nome = nome;
+        this.identifier = identifier;
+        this.estadio = estadio;
+    }
     
 }

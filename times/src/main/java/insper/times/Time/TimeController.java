@@ -24,8 +24,6 @@ public class TimeController {
 
     @GetMapping("/{identifier}")
     public Time getTimeByIdentifier(@PathVariable String identifier) {
-        System.out.println("AAAAAAAAAAAAAAAAAAAAAQUI");
-        System.out.println(timeService.getTimeByIdentifier(identifier));
         return timeService.getTimeByIdentifier(identifier);
     }
 
